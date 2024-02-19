@@ -1,231 +1,124 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 {
-    /*
-    Console.WriteLine("Hello, World!");
-    Console.WriteLine("It's a nice day!");
+    //Задание 1 (консольный калькулятор)
 
-    const int MINUTS_IN = 60;
+    Console.WriteLine("Задание 1, Консольный калькулятор");
 
-    string name;
+    Console.Write("Введите первое число: ");
+    double number1 = Convert.ToDouble(Console.ReadLine());
 
-    name = "Bob";
-    Console.WriteLine(name);
+    Console.WriteLine("Введите операцию: +, -, *, / ");
+    string operation = Console.ReadLine();
 
-    name = "Bob1";
-    Console.WriteLine(name);
+    Console.Write("Введите второе число: ");
+    double number2 = Convert.ToDouble(Console.ReadLine());
 
-    name = "Bob2";
-    Console.WriteLine(name);
-
-    Console.WriteLine(true);
-    Console.WriteLine(false);
-
-    Console.WriteLine(-10);
-    Console.WriteLine(0);
-    Console.WriteLine(1.24);
-    Console.WriteLine(1.24F);
-
-    Console.WriteLine('H');
-
-    Console.WriteLine("It's a \t nice day!"); 
-    Console.WriteLine("It's a \n nice day!"); //перенос на другую строку
-
-    bool flag = true;
-    flag = false;
-
-    float a = 3.14F;
-
-    var d = 10;
-    var d1 = "test";
-
-    int j;
-    j = 10;
-    */
-
-    /*
-    Console.WriteLine("Добро пожаловать в с#");
-    Console.Write("Надеюсь Вы ");
-    Console.Write("постигнете с# \n");
-    Console.WriteLine("и всё");
-    */
-    /*
-    int j;
-    j = 20;
-
-    Console.WriteLine("J = " + j);
-
-    string name = "TOM";
-    int age = 34;
-    double height = 1.7;
-
-    Console.WriteLine($"Имя {name} Возраст {age} Вес {height}");
-    Console.WriteLine("Имя {0} Возраст {2} Вес {1}", name,height,age);
-    */
-
-    /* Console.WriteLine("Введите своё имя: ");
-     string? name = Console.ReadLine();
-     Console.WriteLine($"Ваше имя: {name}");
-
-     Console.WriteLine("Введите свой возраст: ");
-     string? age_str = Console.ReadLine();
-     int age = Convert.ToInt32(age_str);
-     Console.WriteLine($"Ваш возраст: {age}");
-
-     byte a = 4;
-     byte b = (byte)(a + 70);
-    */
-
-
-    /*
-       // Решение нашей задачи
-       // Подготовка данных
-       bool isWhiteBreadFresh = true;
-       ushort whiteBreadPrice = 150;
-       ushort butterPrice = 230;
-       ushort milkPrice = 170;
-       float milkFatPercentage = 1.2F;
-       ushort icecreaPrice = 350;
-
-       Console.Write("Введите начальную сумму: ");
-       string? sumString = Console.ReadLine();
-       short sum = Convert.ToInt16(sumString);
-
-       if (sum > 0)
-       {
-           if (!isWhiteBreadFresh)
-           {
-               Console.WriteLine("Батон не свежий");
-           }
-           else if (sum >= whiteBreadPrice)
-           {
-               sum = Convert.ToInt16(sum - whiteBreadPrice);
-               Console.WriteLine($"Купили свежий батон по цене {whiteBreadPrice}");
-           }
-           else
-           {
-               Console.WriteLine("На батон денег не хватает");
-           }
-
-           sum = (short)(sum - butterPrice);
-
-           if (milkFatPercentage == 1.2F)
-           {
-               sum = Convert.ToInt16(sum - milkPrice);
-           }
-
-           if (sum >= icecreaPrice)
-           {
-               sum = Convert.ToInt16(sum - icecreaPrice);
-           }
-
-           Console.WriteLine($"Остаток суммы: {sum}");
-       }
-       else
-       {
-           Console.WriteLine("Сумма не может быть меньше 0");
-       }
-       */
-
-
-int x = 6;
-
-if (x == 1)
-{
-    Console.WriteLine("1");
-}
-else if (x == 2)
-{
-    Console.WriteLine("2");
-}
-else if (x == 3)
-{
-    Console.WriteLine("3");
-}
-else
-{
-    Console.WriteLine("Не соответствует условиям");
-}
-
-switch (x)
-{
-    case 1:
-        Console.WriteLine("1");
-        break;
-    case 2:
-        Console.WriteLine("2");
-        break;
-    case 3:
-        Console.WriteLine("3");
-        break;
-    case 4:
-        Console.WriteLine("4");
-        break;
-    default:
-        Console.WriteLine("Не соответствует условиям");
-        break;
-}
-
-string name = "Alex1";
-
-switch (name)
-{
-    case "Alex":
-        Console.WriteLine("Alex");
-        break;
-    case "Tom":
-        Console.WriteLine("Tom");
-        break;
-}
-
-string name1 = "Alex1";
-
-switch (name1.Equals("Alex"))
-{
-    case true:
-        Console.WriteLine("Alex");
-        break;
-    case false:
-        Console.WriteLine("Tom");
-        break;
-}
-
-Console.WriteLine(DoOperation(1));
-Console.WriteLine(DoOperation(2));
-Console.WriteLine(DoOperation(3));
-
-
-int DoOperation(int x)
-{
-    switch (x)
+    if (operation == "/" && number2 == 0)
+        Console.WriteLine("Деление на ноль запрещено");
+    else
     {
-        case 1:
-            return 1;
-        case 2:
-            return 2;
-        default: return 0;
+        switch (operation)
+        {
+            case "+":
+                Console.WriteLine($"Результат: {number1 + number2}");
+                break;
+            case "-":
+                Console.WriteLine($"Результат: {number1 - number2}");
+                break;
+            case "*":
+                Console.WriteLine($"Результат: {number1 * number2}");
+                break;
+            case "/":
+                Console.WriteLine($"Результат: {number1 / number2}");
+                break;
+            default:
+                Console.WriteLine($"Неверно выбрана операция");
+                break;
+        }
     }
-}
 
-int DoOperation1(int x)
-{
-    int result = x switch
+    //Задание 2 (определение попадания числа в интервал)
+
+    Console.WriteLine();
+    Console.WriteLine("Задача 2, определение интервала");
+ 
+    Console.Write("Введите число: ");
+    int number = Convert.ToInt32(Console.ReadLine());
+
+    if (number > 50 || number < -50)
+        Console.WriteLine("Число не входит в промежуток от -50 до 50");
+
+    else if (number >= -40 && number <= -10)
+        Console.WriteLine("Число входит в промежуток [-40, -10]");
+
+    else if (number >= -9 && number <= 0)
+        Console.WriteLine("Число входит в промежуток [-9, 0]");
+
+    else if (number >= 1 && number <= 10)
+        Console.WriteLine("Число входит в промежуток [1, 10]");
+
+    else if (number >= 11 && number <= 40)
+        Console.WriteLine("Число входит в промежуток [11, 40]");
+
+    else
+        Console.WriteLine("Число не входит ни в один из имеющихся промежутков");
+
+    //Задание 3 (перевод слов)
+
+    Console.WriteLine();
+    Console.WriteLine("Задача 3, перевод слов");
+    
+    Console.Write("Введите слово на русском языке: ");
+    string? weather = Console.ReadLine();
+
+    Console.WriteLine($"Перевод: {Translate(weather)}");
+
+    string Translate(string word)
     {
-        1 => 1,
-        2 => 2,
-        _ => 0
-    };
+        string result = word switch
+        {
+            "солнечно" => "sunny",
+            "дождь" => "rain",
+            "снег" => "snow",
+            "холодно" => "cold",
+            "облачно" => "cloudy",
+            "ветер" => "wind",
+            "радуга" => "rainbow",
+            "туман" => "fog",
+            "безоблачно" => "cloudless",
+            "гроза" => "thunderstorm",
+            _ => "Слово отсутствует в словаре",
+        };
+        return result;
+    }
 
-    return result;
-}
+    //Задание 4, алгоритм 1 (определение четности)
 
-int DoOperation2(int x) => x switch
-{
-    1 => 1,
-    2 => 2,
-    _ => 0
-};
+    Console.WriteLine();
+    Console.WriteLine("Задача 4, опеределение четности");
 
+    Console.WriteLine("Введите число: ");
+    int num = Convert.ToInt32(Console.ReadLine());
+
+    if (num % 2 == 0)
+        Console.WriteLine($"Число {num} четное");
+    else
+        Console.WriteLine($"Число {num} нечетное");
+
+
+    //Задание 4, алгоритм 2 (определение четности)
+
+    Console.WriteLine();
+    Console.WriteLine("Задача 4, опеределение четности");
+
+    Console.WriteLine("Введите число: ");
+    int num1 = Convert.ToInt32(Console.ReadLine());
+
+    if ((num1 % 10 == 0) || (num1 % 10 == 2) || (num1 % 10 == 4) || (num1 % 10 == 6) || (num1 % 10 == 8))
+        Console.WriteLine($"Число {num1} четное");
+    else
+        Console.WriteLine($"Число {num1} нечетное");
 
 
 }
